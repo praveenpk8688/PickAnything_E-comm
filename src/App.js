@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navbar';
+import { Route,Routes } from 'react-router-dom';
+import Mobile from './Components/Mobile';
+import Tv from './Components/Tv';
+import Laptop from './Components/Laptop';
+import Printer from './Components/Printer';
+import Tablets from './Components/Tablets';
+import Home from './Components/Home';
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar/>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+    <Route path='/Mobile' element={<Mobile/>}/>
+    <Route path='/Tv' element={<Tv/>}/>
+    <Route path='/Laptop' element={<Laptop/>}/>
+    <Route path='/Tablets' element={<Tablets/>}/>
+    <Route path='/Printer' element={<Printer/>}/>
+    
+    </Routes>
+    
+    </>
   );
 }
 
