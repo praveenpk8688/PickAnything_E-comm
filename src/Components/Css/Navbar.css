@@ -1,0 +1,39 @@
+.navbar{
+    height: 100px;
+    background-color: rgb(243, 243, 243) ;
+    box-shadow: 1px 38px 80px -28px;
+}
+ul{
+    margin: 10px;
+    gap: 50px;
+    margin-right: 50px;
+  }
+  
+  li,a{
+    list-style: none;
+    font-size: 23px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .logo{
+    
+    margin-left: 20px;
+    width: 270px;
+  
+  }
+  .logo:hover{
+    scale: 1.15;
+    transition:ease-in-out 0.1s;
+  }
+  .user-icon,.cart-icon{
+    margin-top: 7px;
+    color:black;
+    
+  }
+  li:hover{
+    scale: 1.15;
+    transition:ease-in-out 0.1s;
+  }
+
+  
