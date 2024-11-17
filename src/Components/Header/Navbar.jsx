@@ -46,7 +46,7 @@ export default function Navbar() {
 
 {/* ----------------------------------------------------------------------------------------------------------------------------- */}
 
-<nav className="navbar navbar-expand-lg ">
+<nav className="navbar navbar-expand-lg fixed-top ">
       
       <div className="container-fluid ">
       <Link to='/'>

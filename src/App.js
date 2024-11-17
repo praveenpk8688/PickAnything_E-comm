@@ -1,22 +1,32 @@
+
+
 import './App.css';
 import Navbar from './Components/Header/Navbar';
-import { Route,Routes } from 'react-router-dom';
+import {Routes } from 'react-router-dom';
 import AutoPlay from './Components/Header/Slider';
-// import Mobile from './Components/Mobile';
-// import Tv from './Components/Tv';
-// import Laptop from './Components/Laptop';
-// import Printer from './Components/Printer';
-// import Tablets from './Components/Tablets';
-// import Home from './Components/Home-E-comm';
+import Colorcards from './Mainsection/Colorcards.jsx';
+import BigDiscounts from './Mainsection/BigDiscounts.jsx';
+// import NewArrivels from './Mainsection/NewArrivels.jsx';
+
+
+
+
 
 
 
 function App() {
 
   return (
-    <>
+    <div className="App" id='App'>
+    
     <Navbar/>
+    
     <AutoPlay/>
+    <Colorcards/>
+    <BigDiscounts/>
+    
+
+
    
     <Routes>
       {/* <Route path='/' element={<Home/>}/> */}
@@ -24,7 +34,7 @@ function App() {
     
     </Routes>
     
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,63 @@
+.colorcard{
+    /* position: relative;
+    top: 55rem; */
+    /* background-color: rgb(226, 225, 225); */
+    background-color: rgb(255, 255, 255);
+
+}
+.colorcard-container{
+    /* margin: ; */
+    position: relative;
+    top: 55rem;
+    background-color: rgb(255, 255, 255);
+}
+.card-body{
+    width: 300px;
+    /* height: 250px; */
+    /* margin: 200px; */
+    margin: 3rem 0rem 3rem 2rem;
+    border-radius: 10px;
+}
+/* .card-title{
+
+} */
+
+.card1,.card2,.card3,.card4{
+    /* background-color: bisque; */
+    width: 22rem;
+    border-radius: 20px;
+    font-size: 20px;
+}
+.card1{
+    background-color:#fdefe6;
+}
+.card2{
+    background-color:#ceebe9;
+}
+.card3{
+    background-color:#e2f2b2 ;
+}
+.card4{
+    background-color: #d6e5fb;
+}
+.ct{
+    text-align: center;
+    position: relative;
+    top: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+.ctt{
+    font-size: 20px;
+    padding: 20px;
+    text-align: left;
+}
+.card-icon{
+    position: relative;
+    top: 30px;
+    right: -10rem;
+    font-size: 50px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 8px;
+}

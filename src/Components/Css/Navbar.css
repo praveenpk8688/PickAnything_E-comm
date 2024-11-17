@@ -1,7 +1,9 @@
+
 .navbar{
     height: 100px;
-    background-color: rgb(243, 243, 243) ;
+    background-color: rgb(240, 238, 238) ;
     box-shadow: 1px 38px 80px -28px;
+    
 }
 ul{
     margin: 10px;
