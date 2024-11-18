@@ -1,5 +1,5 @@
 
-import "../Components/Css/Colorcards.css"
+import "../Css/Colorcards.css"
 import { IoMdCar } from "react-icons/io";
 import { BsFillCreditCardFill } from "react-icons/bs";
 import { IoShieldHalfOutline } from "react-icons/io5";
