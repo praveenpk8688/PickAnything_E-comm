@@ -1,0 +1,40 @@
+.hero_img_main {
+    height: 25rem;
+    background-image: url("../../Images/table.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -62rem;
+    filter: blur(3px);
+    box-shadow: inset 0px 0px 12rem 60px rgba(0, 0, 0, 0.637);
+    border-radius: 10px;
+}
+
+.allpro_heading {
+    text-align: center;
+    position: absolute;
+    top: 220px;
+    left: 40%;
+    font-family: "Josefin Sans", serif;
+    font-size: 75px;
+    font-weight: 700;
+    background-image: linear-gradient(45deg, #1d161d 31%, #1f71d2 49%, #5fc20f 77%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.products-cards {
+    position: relative;
+    top: -50rem; /* Adjusted to move cards to the top */
+    /* margin-top: 2rem; Optional: Add margin for spacing */
+    /* margin-bottom: 0; */
+}
+.no-products-found {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
