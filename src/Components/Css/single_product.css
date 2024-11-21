@@ -1,12 +1,181 @@
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+} */
+
+.container1 {
+    font-family:"Montserrat", sans-serif ;
+}
+/* .product-image img {
+    width: 300px;
+    height: 300px;
+}
+
+
+
+.rating {
+    color: #ff9900;
+}
+
+.add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.similar-products {
+    margin-top: 30px;
+}
+
+.similar-product {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.similar-product img {
+    width: 200px;
+    height: 200px;
+} */ 
+/* .single_product{
+    background-color: #080808;
+} */
+ .like{
+    font-family:"Montserrat", sans-serif ;
+    font-size: 40px;
+    padding-top: 1rem;
+    font-weight:580;
+    
+    
+ }
+ .quntity_input{
+    display: flex;
+    width: 100px;
+    height: 40px;
+    font-size: 19px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: center;
+ }
+ .pro_btn{
+    /* margin: 9rem;
+    margin-right: 50.7rem;
+    padding-right: 7rem; */
+    /* position: absolute; */
+    top: 49.9rem;
+    left: 55rem;
+    
+
+    
+}
+.rating_label,.rating-text{
+   
+    font-size: 16px;
+    font-weight: bolder;
+    margin-left: 10px;
+    width: 190px; 
+    background-color: #f6f9fc;
+    
+}
+.porduct_price{
+    font-size: 30px;
+    font-weight: 700;
+    
+    
+
+}
+#btn_text{
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: #0f3460;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.img_box{
+    /* width: 100%; */
+    /* height: 100%; */
+    
+}
+.product_img{
+    /* width: 100%; */
+    height: 600px;
+    object-fit: contain;
+    border-radius: 20rem;
+    /* padding: 30px; */
+
+}
+.product_details{
+    color: #414141;
+    font-size: 37px;
+    font-weight:600;
+    border-bottom: 1px solid #53535398;
+    width: 26.4rem;
+}
+.reviews_count{
+    border-bottom: 1px solid #53535300;
+    color: #838383;
+    font-size:20px;
+
+}
+.product_desc{
+    font-size: 17px;
+    color: #838383;
+}
+/* .rating_label {
+  background-color: #f6f9fc !important;
+    
+} 
+.css-1ckov0h-MuiSvgIcon-root {
+    background-color: #f6f9fc !important;
+}
+.MuiSvgIcon-fontSizeInherit,.rating-text,#rating-box {
+    background-color: #af2a2a !important;
+  }
+  .css-i0l71t-MuiRating-root {
+    background-color: #000000 !important;
+  }
+#rating-box2{
+    background-color: #f6f9fc !important;
+}
+.css-1czqjfa-MuiRating-decimal{
+    background-color: #f6f9fc !important;
+}
+.css-1ckov0h-MuiSvgIcon-root{
+    background-color: #f6f9fc !important;
+} */
+ /* div{
+    background-color: #ffffff;
+
+ }
+ .product_box{
+    /* width: 200px;
+    height: 300px; */
+
+.MuiSvgIcon-fontSizeInherit{
+    background-color: #f6f9fc !important;
+}
+/* #card_row{
+   position: relative !important;
+   top: 40rem !important;
+    
+} */
 .big-discount-container{
     background-color: #f6f9fc;
   }
-  .card-row {
+.card-row1 {
     /* display: flex;
     justify-content: center;
     align-items: center; */
     position: relative;
-    top: 60rem;
+    top: 7rem;
     left: 22rem;;
     width: 80rem;
     margin-bottom: 7rem;
@@ -126,7 +295,7 @@
   /* From Uiverse.io by SouravBandyopadhyay */ 
   
   
-  .button {
+  /* .button {
     --width: 100px;
     --height: 35px;
     --tooltip-height: 35px;
@@ -146,9 +315,9 @@
     position: absolute;
     right: 30px;
     bottom: 30px;
-  }
+  } */
   
-  .button::before {
+  /* .button::before {
     position: absolute;
     content: attr(data-tooltip);
     width: var(--tooltip-width);
@@ -251,4 +420,4 @@
   }
   
   
-  
+   */

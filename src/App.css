@@ -4,6 +4,11 @@
   box-sizing: border-box;
   background-color: #f6f9fc;
 }
+Link{
+  text-decoration: none;
+  color: black;
+}
+
 /* #App{
   background-color: rgb(240, 240, 240);
   

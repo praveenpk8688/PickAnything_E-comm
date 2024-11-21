@@ -1,42 +1,21 @@
-
-import './App.css';
-import Navbar from './Components/Header/Navbar';
-import {Routes } from 'react-router-dom';
-import AutoPlay from './Components/Header/Slider';
-import Colorcards from './Components/Mainsection/Colorcards.jsx';
-import BigDiscounts from './Components/Mainsection/BigDiscounts.jsx';
-import NewArrivels from './Components/Mainsection/NewArrivels.jsx';
-// import RandomProductPicker from './Mainsection/random.jsx';
-// import RandomProduct from './Mainsection/random.jsx';
-import Bestsales from './Components/Mainsection/Bestsales.jsx';
-import Footer from './Components/Footer/Footer.jsx';
-
-
+// import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { CartProvider } from "./Components/Cart_pages/CartContext.js";
+import ProductList from './Components/Products_Page/AllProducts.jsx';
+import SingleProduct from './Components/Products_Page/single_product.jsx';
+import Home from './Pages/Home.jsx';
 
 function App() {
-
   return (
-    <div className="App" id='App'>
-    
-    <Navbar/>
-    <AutoPlay/>
-    <Colorcards/>
-    <BigDiscounts/>
-    <NewArrivels/>
-    <Bestsales/>
-    <Footer/>
-   
-    
-
-
-   
-    <Routes>
-      {/* <Route path='/' element={<Home/>}/> */}
-   
-    
-    </Routes>
-    
-    </div>
+    <CartProvider>
+      <div className="App" id='App'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/products' element={<ProductList />} />
+          <Route path='/product/:id' element={<SingleProduct />} />
+        </Routes>
+      </div>
+    </CartProvider>
   );
 }
 

@@ -2,13 +2,27 @@
   background-color: #f6f9fc;
 }
 .card-row {
-  position: relative;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* position: relative;
   top: 60rem;
   left: 22rem;;
   width: 80rem;
-  margin-bottom: 7rem;
+  margin-bottom: 7rem; */
   
   
+}
+
+.navigate{
+  color: #000;
+  text-decoration: none;
+  background-color: #ffffff;
+  text-decoration: none;
+  border-radius: 20rem;
+  color: #000;
+  list-style: none;
+
 }
 
 .dp-card {
@@ -17,9 +31,15 @@
   height: 24rem;
   /* margin-left: 10rem; */
   box-shadow: 0px 0px 30px 0px #adadad;
+  
 }
-#dpcard,#dpcard-img{
+#dpcard{
   border-radius: 28px;
+
+}
+#dpcard-img{
+  border-radius: 28px;
+
 }
 
 .product-col{
@@ -42,10 +62,24 @@
 .dpcard-item,.product-name,.product-price,.dpcard-body{
   background-color:#ffffff;
 }
+.dpcard-item{
+  width: 20rem;
+  text-align:left;
+}
 .dpcard-body{
   /* height: 10rem; */
   width: 22rem;
   margin: 5px;
+  
+
+}
+#card-body {
+  margin: 0;
+  /* border-bottom-left-radius: 10px !important; */
+  /* background-color: #000000; */
+  margin-bottom: 8px;
+  margin-left: 3px;
+  font-family: "Montserrat", sans-serif;
   
 
 }
@@ -71,14 +105,17 @@
   color: #ffffff;
   background-color: #0f3460;
   padding: 5px 9px;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0px 3px 5px rgba(0, 101, 253, 0.5);
 }
 
 .product-name{
+  width: 356px;
   font-size: 25px;
   margin-top: 10px;
   margin-bottom: 10px;
+  font-weight:600;
+
 }
 .product-price{
   margin-top: 20px;

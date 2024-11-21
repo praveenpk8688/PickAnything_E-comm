@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../Css/AllProducts.css";
 import { products } from "../../AllData"; 
 import Navbar from "../Header/Navbar.jsx";
@@ -9,6 +9,8 @@ import Row from "react-bootstrap/Row";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
+import { CartContext } from "../Cart_pages/CartContext.js";
+import { Link } from "react-router-dom";
 
 const labels = {
   0.5: "Useless",
@@ -30,7 +32,6 @@ function ProductList() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [cart, setCart] = useState([]);
-
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -66,12 +67,9 @@ function ProductList() {
     <div className="product-list">
       <Navbar />
       
-      <div className="hero_img_main">
-        
-      </div>
+      <div className="hero_img_main"></div>
       <h3 className="allpro_heading">All Products</h3>
       
-
       <div className="filter">
         <label htmlFor="category">Filter By Category: </label>
         <select id="category" value={selectedCategory} onChange={handleCategoryChange}>
@@ -95,22 +93,11 @@ function ProductList() {
         />
       </div>
 
-      {/* {filteredProducts.length > 0 ? (
+      {filteredProducts.length > 0 ? (
         <Row xs={1} md={3} className="card-row g-4">
           {filteredProducts.map((product) => (
             <Col key={product.id} className="products-cold">
-              <Product className="products-cards" product={product} />
-            </Col>
-          ))}
-        </Row>
-      ) : (
-        <div className="no-products-found">No products found</div>
-      )} */}
-
-{filteredProducts.length > 0 ? (
-        <Row xs={1} md={3} className="card-row g-4">
-          {filteredProducts.map((product) => (
-            <Col key={product.id} className="products-cold">
+             
               <Product
                 className="products-cards"
                 product={product}
@@ -118,6 +105,7 @@ function ProductList() {
                 removeFromCart={removeFromCart}
                 isInCart={cart.some((item) => item.id === product.id)}
               />
+              
             </Col>
           ))}
         </Row>
@@ -135,75 +123,75 @@ function Product({ product, addToCart, removeFromCart, isInCart }) {
 
   return (
     <div className="products-cards">
-    <Card className="dp-card" id="dpcard">
-      <Card.Img
-        variant="top"
-        src={product.imgUrl}
-        alt={product.name}
-        className="product-img"
-        id="dpcard-img"
-      />
-      <Card.Body className="dpcard-body" id='card-body'>
-        {/* <span className="discount-percentage">
-          {product.discount}% off
-        </span> */}
-        <div className="dpcard-item">
-          <h3 className="product-name">{product.productName}</h3>
-          <Box
-            className="rating-box"
-            id="rating-box"
-            sx={{ width: 200, display: "flex", alignItems: "center" }}
-          >
-            <Rating
-              className="rating"
-              name="text-feedback"
-              value={product.reviews[0].rating}
-              readOnly
-              precision={0.5}
-              emptyIcon={
-                <StarIcon
-                  className="empty-star"
-                  style={{ opacity: 0.55 }}
-                  fontSize="inherit"
-                />
-              }
-            />
-            <Box className="rating-text" sx={{ ml: 2 }}>
-              {labels[product.reviews[0].rating]}
+      <Card className="dp-card" id="dpcard">
+      <Link className="navigate" to={`/product/${product.id}`}>
+        <Card.Img
+          variant="top"
+          src={product.imgUrl}
+          alt={product.name}
+          className="product-img"
+          id="dpcard-img"
+        />
+        </Link>
+        
+        <Card.Body className="dpcard-body" id='card-body'>
+          <div className="dpcard-item">
+            <Link className="navigate" to={`/product/${product.id}`}>
+            <h3 className="product-name">{product.productName}</h3>
+            </Link>
+            <Box
+              className="rating-box"
+              id="rating-box"
+              sx={{ width: 200, display: "flex", alignItems: "center" }}
+            >
+              <Rating
+                className="rating"
+                name="text-feedback"
+                value={product.reviews[0].rating}
+                readOnly
+                precision={0.5}
+                emptyIcon={
+                  <StarIcon
+                    className="empty-star"
+                    style={{ opacity: 0.55 }}
+                    fontSize="inherit"
+                  />
+                }
+              />
+              <Box className="rating-text" sx={{ ml: 2 }}>
+                {labels[product.reviews[0].rating]}
+              </Box>
             </Box>
-          </Box>
 
-          <h4 className="product-price">${product.price}</h4>
+            <h4 className="product-price">${product.price}</h4>
 
-          <div className="button" data-tooltip={product.price}>
-            <div className="button-wrapper">
-              <div className="text">Add To Cart</div>
-              <div className="button" onClick={() => isInCart ? removeFromCart(product.id) : addToCart(product)}>
-            <div className="button-wrapper">
-              <div className="text">{isInCart ? "Remove from Cart" : "Add To Cart"}</div>
+            <div className="button" data-tooltip={product.price}>
+              <div className="button-wrapper">
+                <div className="text">{isInCart ? "Remove from Cart" : "Add To Cart"}</div>
+                <div className="button" onClick={() => (isInCart ? removeFromCart(product.id) : addToCart(product))}>
+                  
+                </div>
+                <span className="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-bag-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"
+                    />
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                  </svg>
+                </span>
               </div>
             </div>
-              <span className="icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-bag-check"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"
-                  />
-                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
-                </svg>
-              </span>
-            </div>
           </div>
-        </div>
-      </Card.Body>
-    </Card>
+        </Card.Body>
+      </Card>
     </div>
   );
 }

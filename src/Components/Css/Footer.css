@@ -8,8 +8,9 @@
   background-color: #0f3460;
   /* padding:90px 0; */
   padding-top: 3rem;
-  margin-top: 64rem;
-  
+  /* margin-top: 64rem; */
+  position: relative;
+  bottom: -60rem;
   
 }
 .footer-description{

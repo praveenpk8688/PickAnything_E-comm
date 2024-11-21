@@ -6,6 +6,8 @@ import Row from "react-bootstrap/Row";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
+import { Link } from "react-router-dom";
+
 
 const labels = {
   0.5: "Useless",
@@ -31,6 +33,7 @@ function BigDiscounts() {
         {discountProducts.map((product, index) => (
           <Col key={index} className="product-col">
             <Card className="dp-card" id="dpcard">
+            <Link className="navigate" to={`/product/${product.id}`}>
               <Card.Img
                 variant="top"
                 src={product.imgUrl}
@@ -38,12 +41,19 @@ function BigDiscounts() {
                 className="product-img"
                 id="dpcard-img"
               />
-              <Card.Body className="dpcard-body">
+              </Link>
+              <Card.Body className="dpcard-body" id='card-body'>
                 <span className="discount-percentage">
                   {product.discount}% off
                 </span>
                 <div className="dpcard-item" key={index}>
-                  <h3 className="product-name">{product.productName}</h3>
+                  
+                  <h3 className="product-name">
+            <Link className="navigate" to={`/product/${product.id}`}>
+
+                    {product.productName}
+                    </Link>
+                    </h3>
                   {/* /////////////////////////     STAR RATING     //////////////////// */}
                   <Box
                     className="rating-box"
