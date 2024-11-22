@@ -1,6 +1,7 @@
 
 import React from 'react';
 import '../Css/Footer.css';
+import achieversIT from "../../Images/achieversIT.png";
 
 
 const Footer = () => {
@@ -9,7 +10,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section-main">
           <h2 className="footer-logo">
-            <img src="Images/achieversIT.png" id='logo2' alt="BuyMore" />
+            <img src={achieversIT} id='logo2' alt="BuyMore" />
           </h2>
           <p className="footer-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur laudantium doloribus molestiae illo pariatur minus recusandae maxime cumque, harum quisquam repellendus nemo vero modi ea, deserunt laborum dolorum! Enim, facilis.</p>
         </div>

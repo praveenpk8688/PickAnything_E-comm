@@ -7,6 +7,10 @@ import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Redux/productActions/productActions'; // Adjust path as needed
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const labels = {
@@ -26,12 +30,42 @@ const labels = {
 };
 
 function BigDiscounts() {
+  
   return (
     <>
+    <ToastContainer/>
       <h2 className="big-discount-title">Big Discounts</h2>
       <Row xs={1} md={3} className="card-row g-5  mt-5">
         {discountProducts.map((product, index) => (
-          <Col key={index} className="product-col">
+          <>
+          <Product key={index} product={product} />
+
+          </>
+        ))}
+      </Row>
+    </>
+  );
+}
+
+
+function Product({ product }) {  // New Product component
+  const dispatch = useDispatch();
+
+  const handlwClicks = () => {
+    notify();
+    addmecart();
+  };
+
+  const notify = () => toast(`${product.productName} is successfully added to Cart`);
+
+  const addmecart = () => {
+    dispatch(addToCart(product));
+  };
+
+
+  return (
+    <>
+          <Col  className="product-col">
             <Card className="dp-card" id="dpcard">
             <Link className="navigate" to={`/product/${product.id}`}>
               <Card.Img
@@ -46,14 +80,11 @@ function BigDiscounts() {
                 <span className="discount-percentage">
                   {product.discount}% off
                 </span>
-                <div className="dpcard-item" key={index}>
+                <div className="dpcard-item" >
                   
                   <h3 className="product-name">
-            <Link className="navigate" to={`/product/${product.id}`}>
-
-                    {product.productName}
-                    </Link>
-                    </h3>
+                    <Link className="navigate" to={`/product/${product.id}`}>{product.productName}</Link>
+                  </h3>
                   {/* /////////////////////////     STAR RATING     //////////////////// */}
                   <Box
                     className="rating-box"
@@ -83,7 +114,7 @@ function BigDiscounts() {
 
                   {/* ///////////////////CART BUTTON//////////////////////// */}
 
-                  <div class="button" data-tooltip={product.price}>
+                  <div class="button" data-tooltip={product.price} onClick={handlwClicks}>
                     <div class="button-wrapper">
                       <div class="text">Add To Cart</div>
                       <span class="icon">
@@ -105,13 +136,19 @@ function BigDiscounts() {
                     </div>
                   </div>
                 </div>
+
               </Card.Body>
+
             </Card>
+
           </Col>
-        ))}
-      </Row>
-    </>
+
+          </>
+
   );
+
 }
+
+
 
 export default BigDiscounts;

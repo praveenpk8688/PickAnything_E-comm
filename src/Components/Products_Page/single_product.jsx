@@ -10,6 +10,10 @@ import StarIcon from "@mui/icons-material/Star";
 import { Link } from 'react-router-dom';
   import { Row, Col, Card } from "react-bootstrap";
 import Footer from '../Footer/Footer.jsx';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Redux/productActions/productActions.js';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -33,19 +37,28 @@ const labels = {
 
 function SingleProduct( ) {
  
-
 const { id } = useParams(); 
- 
+ const dispatch = useDispatch();
 
+const handlwClicks =() => {
+  notify();
+  addmecart();
+}
 
   const myproduct = products.find(p => p.id === (id));
+  
 
+  const notify = () => toast(myproduct.productName+" "+ 'is sussesfully Added to Cart');
 
   const sameCategoryProducts = products.filter(p => p.category === myproduct.category && p.id !== myproduct.id);
 
+  const addmecart=() =>{
+    dispatch(addToCart(myproduct))
+  }
 
   return (
     <>
+   <ToastContainer/>
     <div className="single_product">
       <Navbar />
       <div className="hero_img_main"></div>
@@ -172,8 +185,8 @@ const { id } = useParams();
           <p className='short_desc mt-3 '>{myproduct.shortDesc}</p>
           <input type="text"  className='quntity_input' placeholder='1'/>
 
-          <Link to={'/'}>
-            <div className="button pro_btn  " data-tooltip={myproduct.price}>
+          
+            <div className="button pro_btn  " data-tooltip={myproduct.price} onClick={(e)=>handlwClicks(e)}>
             <div className="button-wrapper ">
             <div className="text btn_text " id='btn_text'>Add To Cart</div>
             
@@ -198,7 +211,7 @@ const { id } = useParams();
 
               </div>
             </div>
-            </Link>
+
         </div>
       </div>
       <div class="row">
@@ -262,7 +275,7 @@ const { id } = useParams();
                 </Box>
 
                 <h4 className="product-price">${product.price}</h4>
-                <div class="button" data-tooltip={product.price}>
+                <div class="button" data-tooltip={product.price} onClick={()=>dispatch(addToCart(product))}>
                     <div class="button-wrapper">
                       <div class="text">Add To Cart</div>
                       <span class="icon">

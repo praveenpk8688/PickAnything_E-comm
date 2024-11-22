@@ -21,7 +21,7 @@ function Home() {
       <section className="home">
        
         <section className="navBar_main">
-          <Navbar />
+          {/* <Navbar /> */}
         </section>
         <section className="hero_slick">
           <AutoPlay />

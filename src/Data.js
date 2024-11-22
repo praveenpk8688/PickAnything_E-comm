@@ -149,3 +149,17 @@ function Product({ product, addToCart, removeFromCart, isInCart }) {
 }
 
 export default ProductList;
+
+
+
+
+
+const notify = () => toast(myproduct.productName+" "+ 'is sussesfully Added to Cart');
+const addmecart=() =>{dispatch(addToCart(myproduct))}
+
+const handlwClicks =() => {
+  notify();
+  addmecart();
+}
+
+onClick={(e)=>handlwClicks(e)}

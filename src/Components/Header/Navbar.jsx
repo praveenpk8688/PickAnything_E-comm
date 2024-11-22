@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../Css/Navbar.css";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import { useSelector } from 'react-redux';
+// import Cart from "../Cart_pages/Cart";
+export default function Navbar() {
+  const cartData = useSelector((state) => state.productData.cartData);
+  const cartItemCount = cartData.length;
 
-export default function Navbar({ cartItemCount }) {
+
   return (
     <div className="container-navbarj">
       <nav className="navbar navbar-expand-lg fixed-top">

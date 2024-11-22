@@ -32,6 +32,8 @@ import wireless04 from "../src/Images/wireless-04.png";
 
 import sofaSlide from "../src/Images/hero-img.png";
 import watchSlide from "../src/Images/watch-07.png";
+import achieversIT from "../src/Images/achieversIT.png";
+
 
 export const discountProducts = [
     {

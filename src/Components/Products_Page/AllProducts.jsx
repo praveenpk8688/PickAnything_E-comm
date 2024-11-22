@@ -9,7 +9,13 @@ import Row from "react-bootstrap/Row";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
-import { CartContext } from "../Cart_pages/CartContext.js";
+import { addToCart } from '../../Redux/productActions/productActions.js';
+import { IoSearch } from "react-icons/io5";
+
+import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Link } from "react-router-dom";
 
 const labels = {
@@ -31,7 +37,7 @@ const labels = {
 function ProductList() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [cart, setCart] = useState([]);
+
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -41,21 +47,9 @@ function ProductList() {
     setSearchQuery(event.target.value);
   };
 
-  const addToCart = (product) => {
-    setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === product.id);
-      if (existingItem) {
-        return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      }
-      return [...prevCart, { ...product, quantity: 1 }];
-    });
-  };
-
-  const removeFromCart = (productId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
-  };
+  
+  
+  
 
   const filteredProducts = products.filter((product) => {
     const matchesCategory = selectedCategory === "All" || product.category === selectedCategory.toLowerCase();
@@ -71,7 +65,7 @@ function ProductList() {
       <h3 className="allpro_heading">All Products</h3>
       
       <div className="filter">
-        <label htmlFor="category">Filter By Category: </label>
+        <label htmlFor="category">Filter By Category |</label>
         <select id="category" value={selectedCategory} onChange={handleCategoryChange}>
           <option value="All">All</option>
           <option value="Sofa">Sofa</option>
@@ -82,16 +76,20 @@ function ProductList() {
         </select>
       </div>
 
-      <div className="search">
-        <label htmlFor="search">Search Products: </label>
-        <input
-          type="text"
+      
+      <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input class="search_input" type="text"
           id="search"
           value={searchQuery}
           onChange={handleSearchChange}
-          placeholder="Search by product name"
-        />
+          placeholder="Search by product name"/>
+          <a href="#" class="search_icon"><IoSearch className="search_icon1" />
+          </a>
+        </div>
       </div>
+    </div>
 
       {filteredProducts.length > 0 ? (
         <Row xs={1} md={3} className="card-row g-4">
@@ -101,9 +99,9 @@ function ProductList() {
               <Product
                 className="products-cards"
                 product={product}
-                addToCart={addToCart}
-                removeFromCart={removeFromCart}
-                isInCart={cart.some((item) => item.id === product.id)}
+              
+            
+                
               />
               
             </Col>
@@ -118,10 +116,20 @@ function ProductList() {
   );
 }
 
-function Product({ product, addToCart, removeFromCart, isInCart }) {
+function Product({ product}) {
   const { imgUrl, productName, price, description, stock } = product;
+  const dispatch = useDispatch();
 
+  const notify = () => toast(product.productName+" "+ 'is sussesfully Added to Cart');
+  const addmecart=() =>{dispatch(addToCart(product))}
+  const handlwClicks = () => {
+    notify();
+    addmecart();
+  };
   return (
+    <>
+   <ToastContainer/>
+
     <div className="products-cards">
       <Card className="dp-card" id="dpcard">
       <Link className="navigate" to={`/product/${product.id}`}>
@@ -165,10 +173,11 @@ function Product({ product, addToCart, removeFromCart, isInCart }) {
 
             <h4 className="product-price">${product.price}</h4>
 
-            <div className="button" data-tooltip={product.price}>
+<div className="button" data-tooltip={product.price} 
+onClick={(e)=>handlwClicks(e)} >
               <div className="button-wrapper">
-                <div className="text">{isInCart ? "Remove from Cart" : "Add To Cart"}</div>
-                <div className="button" onClick={() => (isInCart ? removeFromCart(product.id) : addToCart(product))}>
+                <div className="text">Add To Cart</div>
+                <div className="button" >
                   
                 </div>
                 <span className="icon">
@@ -193,6 +202,7 @@ function Product({ product, addToCart, removeFromCart, isInCart }) {
         </Card.Body>
       </Card>
     </div>
+    </>
   );
 }
 

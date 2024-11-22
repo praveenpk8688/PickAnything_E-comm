@@ -1,39 +1,41 @@
 .hero_img_main {
-    height: 25rem;
-    background-image: url("../../Images/table.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: -62rem;
-    filter: blur(3px);
-    box-shadow: inset 0px 0px 12rem 60px rgba(0, 0, 0, 0.637);
-    border-radius: 10px;
+  height: 25rem;
+  background-image: url("../../Images/table.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -62rem;
+  filter: blur(3px);
+  box-shadow: inset 0px 0px 12rem 60px rgba(0, 0, 0, 0.637);
+  border-radius: 10px;
 }
 
 .allpro_heading {
-    text-align: center;
-    position: absolute;
-    top: 165px;
-    left: 37%;
-   
-    max-width: 36rem;
-    font-family: "Josefin Sans", serif;
-    font-size: 75px;
-    font-weight: 700;
-    background-image: linear-gradient(45deg, #000000 31%, #0073ff 49%, #6ed817 77%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  text-align: center;
+  position: absolute;
+  top: 165px;
+  left: 37%;
+
+  max-width: 36rem;
+  font-family: "Josefin Sans", serif;
+  font-size: 75px;
+  font-weight: 700;
+  background-image: linear-gradient(
+    45deg,
+    #000000 31%,
+    #0073ff 49%,
+    #6ed817 77%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .products-cards {
-    position: relative;
-    top: -50rem; /* Adjusted to move cards to the top */
-    /* margin-top: 2rem; Optional: Add margin for spacing */
-    /* margin-bottom: 0; */
-    
+  position: relative;
+  top: -50rem; 
 }
-.products-cold{
-    gap: 90px;
+.products-cold {
+  gap: 90px;
 }
 .no-products-found {
   text-align: center;
@@ -44,17 +46,98 @@
   background-color: #f8f8f8;
   border-radius: 8px;
 }
-.no-products-found{
-    height: 300px;
-    font-size: 50px;
-    font-weight: bold;
-    background-image: url('../../Images/output.gif');
-    background-repeat: no-repeat;
-    background-size: contain ;
-    background-size: 10rem;
-    background-position: center;
-    background-position-y:110px ;
+.no-products-found {
+  height: 300px;
+  font-size: 50px;
+  font-weight: bold;
+  background-image: url("../../Images/output.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 10rem;
+  background-position: center;
+  background-position-y: 110px;
 }
-.filter{
+.filter {
+  position: absolute;
+  top: 50%;
+  left: 9%;
+  transform: translate(-50%, -20%);
+  z-index: 1;
+  padding: 10px;
+  background-color: #0f3460;
+  color: #ffffff;
+  border-right: 1px solid #ffffff;
+  font-family: "Josefin Sans", serif;
 
+  border-radius: 8px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+}
+#category {
+  background-color: #0f3460 !important;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  margin-left: 10px;
+}
+option {
+  border: 1px solid #ffffff !important;
+}
+.search {
+  position: relative;
+  top: 50px;
+  left: 50%;
+}
+
+/* SEARCH STYLINGS */
+.searchbar {
+  position: relative;
+  top: 40px;
+  height: 60px;
+  background-color: #44444400;
+  border-radius: 30px;
+  transition: background-color 0.4s ease;
+  padding: 10px;
+  box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.397);
+}
+
+.search_input {
+  color: rgb(0, 0, 0);
+  border: 0;
+  outline: 0;
+  background: none;
+  font-size: larger;
+  font-family: "Josefin Sans", serif;
+  width: 0;
+  caret-color: transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+.search_input::placeholder {
+  color: rgba(0, 0, 0, 0.267);
+  font-family: "Josefin Sans", serif;
+}
+.searchbar:hover > .search_input {
+  padding: 0 10px;
+  width: 450px;
+  caret-color: red;
+  transition: width 0.4s linear;
+}
+
+.search_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.search_icon1 {
+  background-color: #353b4800;
+
+  font-size: 30px;
+  color: #000000;
 }
