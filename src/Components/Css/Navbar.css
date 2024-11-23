@@ -26,11 +26,12 @@ ul {
   position: absolute;
   top: -10px;
   right: -10px;
-  background-color: red;
+  background-color: #0d6efd !important;
   color: white;
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 12px;
+  font-weight:500;
   min-width: 20px;
   text-align: center;
 }

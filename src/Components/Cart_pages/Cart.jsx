@@ -2,42 +2,20 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Card } from "react-bootstrap";
 import '../Css/Cart.css'
-import { LuPlus,
-  LuMinus,
-   } from "react-icons/lu";
-   import { removeFromCart } from '../../Redux/productActions/productActions'; 
+import { LuPlus,LuMinus} from "react-icons/lu";
+import { removeFromCart, increaseQuantity, decreaseQuantity } from '../../Redux/productActions/productActions'; 
 
 
 
 function Cart() {
-  const cartData = useSelector((state) => state.productData.cartData);
-  console.log(cartData);
+  const cartData = useSelector((state) => state.productData.cartData || [] );
   const dispatch = useDispatch();
-
-  const [totalPrice, setTotalPrice] = useState(0);
-  useEffect(() => {
+  const cartTotal = cartData.reduce((prevsValue, currentValue) => {
+    return prevsValue + currentValue.price * (currentValue.quantity || 1);
+  }, 0);
   
-    const newTotalPrice = cartData.reduce((acc, curr) => acc + curr.price * curr.quantity, 0);
-    setTotalPrice(newTotalPrice);
-  }, [cartData]);
 
 
-  const handleRemove = (product) => {
-    dispatch(removeFromCart(product));
-  };
-
-
-  const handleQuantityChange = (product, change) => {
-   
-    const updatedCart = cartData.map((item) => {
-      if (item.id === product.id) {
-        return { ...item, quantity: Math.max(1, item.quantity + change) };
-      }
-      return item;
-    });
-
-    
-  };
   return (
     <div>
       {cartData.length > 0 ? (
@@ -61,34 +39,32 @@ function Cart() {
                     <Card.Title className="cart-title text-center">
                       {product.productName}
                     </Card.Title>
-                    {/* // Remove icon code comes from here */}
-                    {/* <button className="remove-btn" onClick={() => removeFromCart(product)}>Remove</button> */}
-                    {/* /* From Uiverse.io by javierBarroso */ }
-                    <button class="button cross-btn" onClick={() => handleRemove(product)}>
+                   
+                    <button class="button cross-btn" onClick={() => dispatch(removeFromCart(product.id))}>
                       <span class="X"></span>
                       <span class="Y"></span>
                       <div class="close">Remove</div>
                     </button>
                     
-                    <LuPlus className="plus-icon" onClick={() => handleQuantityChange(product, 1 ) }/>
-                    <LuMinus className="minus-icon" onClick={() => handleQuantityChange(product, -1)} />
+                    <LuPlus className="plus-icon" onClick={() => dispatch(increaseQuantity(product.id))} />
+                   
+                    <LuMinus className="minus-icon" onClick={() => dispatch(decreaseQuantity(product.id))}/>
+            
 
-                    <Card.Text className="cart-Price">Price: $ {product.price}</Card.Text>
+                    <Card.Text className="cart-Price  ">Price: $ {product.price}.00</Card.Text>
                     <Card.Body>
-                      <Card.Text className="cart-quantity">Quantity: {product.quantity}</Card.Text>
-                      <Card.Text className="cart-subtotal">Subtotal: ${product.price * product.quantity} </Card.Text>
+                      <Card.Text className="cart-quantity ms-4">Quantity: {product.quantity}</Card.Text>
+                      <Card.Text className="cart-subtotal">Subtotal: $ {product.price * (product.quantity|| 1)}.00 </Card.Text>
                     </Card.Body>
                   </Card>
                 </div>
-                {/* <div className="col-md-9">
-                <h3>Total Price: {cartData.reduce((acc, curr) => acc + curr.price * curr.quantity, 0)}</h3>
-              </div> */}
+               
               </div>
             </div>
             <div className="total-price container">
               <h2 className="cart-summary">Cart Summary</h2>
             <h4 className="total-price1">Total Price:</h4> 
-            <h3 className="total-price2">$ {totalPrice}.00</h3>
+            <h3 className="total-price2">$ {cartTotal}.00</h3>
            
           </div>
           </>
