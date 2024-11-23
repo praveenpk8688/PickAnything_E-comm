@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "../Css/BigDiscounts.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
@@ -6,27 +6,25 @@ import Row from "react-bootstrap/Row";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
-import {bestsales } from "../../AllData";
+import { bestsales } from "../../AllData";
 import { Link } from "react-router-dom";
 
-
 const labels = {
-    0.5: "Useless",
-    1: "Useless+",
-    1.5: "Poor",
-    2: "Poor+",
-    2.5: "Ok",
-    3: "Ok+",
-    3.5: "Good",
-    4: "Good+",
-    4.5: "Good+",
-    4.6: "Excellent",
-    4.7: "Excellent",
-    4.8: "Excellent+",
-    5: "Excellent+",
-  };
+  0.5: "Useless",
+  1: "Useless+",
+  1.5: "Poor",
+  2: "Poor+",
+  2.5: "Ok",
+  3: "Ok+",
+  3.5: "Good",
+  4: "Good+",
+  4.5: "Good+",
+  4.6: "Excellent",
+  4.7: "Excellent",
+  4.8: "Excellent+",
+  5: "Excellent+",
+};
 
-  
 function Bestsales() {
   return (
     <>
@@ -35,16 +33,16 @@ function Bestsales() {
         {bestsales.map((product, index) => (
           <Col key={index} className="product-col">
             <Card className="dp-card" id="dpcard">
-            <Link className="navigate" to={`/product/${product.id}`}>
-              <Card.Img
-                variant="top"
-                src={product.imgUrl}
-                alt={product.name}
-                className="product-img"
-                id="dpcard-img"
-              />
+              <Link className="navigate" to={`/product/${product.id}`}>
+                <Card.Img
+                  variant="top"
+                  src={product.imgUrl}
+                  alt={product.name}
+                  className="product-img"
+                  id="dpcard-img"
+                />
               </Link>
-              <Card.Body className="dpcard-body" id='card-body'>
+              <Card.Body className="dpcard-body" id="card-body">
                 {/* <span className="discount-percentage">
                   {product.discount}% off
                 </span> */}
@@ -106,9 +104,8 @@ function Bestsales() {
           </Col>
         ))}
       </Row>
-
     </>
-  )
+  );
 }
 
-export default Bestsales
+export default Bestsales;

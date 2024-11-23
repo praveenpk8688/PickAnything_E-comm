@@ -3,19 +3,22 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../Css/Navbar.css";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-import { useSelector } from 'react-redux';
-// import Cart from "../Cart_pages/Cart";
+import { useSelector } from "react-redux";
+
 export default function Navbar() {
   const cartData = useSelector((state) => state.productData.cartData);
   const cartItemCount = cartData.length;
-
 
   return (
     <div className="container-navbarj">
       <nav className="navbar navbar-expand-lg fixed-top">
         <div className="container-fluid">
           <Link className="anchortags" to="/">
-            <img className="logo" src="/Images/achieversIT.png" alt="AchieversIT Logo" />
+            <img
+              className="logo"
+              src="/Images/achieversIT.png"
+              alt="AchieversIT Logo"
+            />
           </Link>
           <button
             className="navbar-toggler"
@@ -34,7 +37,11 @@ export default function Navbar() {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link  className="nav-link active anchortags text-primary" aria-current="page" to="/">
+                <Link
+                  className="nav-link active anchortags text-primary"
+                  aria-current="page"
+                  to="/"
+                >
                   Home
                 </Link>
               </li>
@@ -75,7 +82,9 @@ export default function Navbar() {
               <li className="cart-icon">
                 <Link className="anchortags" to="/cart">
                   <ShoppingCartRoundedIcon id="cart-icon" />
-                  {cartItemCount > 0 && <span className="cart-count">{cartItemCount}</span>}
+                  {cartItemCount > 0 && (
+                    <span className="cart-count">{cartItemCount}</span>
+                  )}
                 </Link>
               </li>
             </ul>

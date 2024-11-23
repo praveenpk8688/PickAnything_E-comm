@@ -1,254 +1,230 @@
-.big-discount-container{
-    background-color: #f6f9fc;
-  }
-  .card-row {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    position: relative;
-    top: 60rem;
-    left: 22rem;;
-    width: 80rem;
-    margin-bottom: 7rem;
-    
-    
-  }
-  
-  .dp-card {
-    background-color: #ffffff;
-    width: 26rem;
-    height: 24rem;
-    /* margin-left: 10rem; */
-    box-shadow: 0px 0px 30px 0px #adadad;
-    
-  }
-  #dpcard{
-    border-radius: 28px;
-  }
-  #dpcard-img{
-    border-radius: 28px;
-  
-  }
-  
-  .product-col{
-    display: flex;
-    flex-wrap: wrap;
-  
-  
-  }
-  .big-discount-title{
-    position: relative;
-    top: 60rem;
-    left: 50rem;
-    font-size: 52px;
-    font-family: "Outfit", serif;
-    font-weight: 600;
-    width: 29rem;
-    
-    
-  }
-  .dpcard-item,.product-name,.product-price,.dpcard-body{
-    background-color:#ffffff;
-  }
-  .dpcard-item{
-    width: 20rem;
-    text-align:left;
-  }
-  .dpcard-body{
-    /* height: 10rem; */
-    width: 22rem;
-    margin: 5px;
-    
-  
-  }
-  #card-body {
-    margin: 0;
-    /* border-bottom-left-radius: 10px !important; */
-    /* background-color: #000000; */
-    margin-bottom: 8px;
-    margin-left: 3px;
-    font-family: "Montserrat", sans-serif !important;
-  
-  }
-  .product-img {
-    width: 100%;
-    height: 16rem;
-    object-fit: contain;
-    background-color: #ffffff;
-    border-radius: 50px;
-  }
-  .product-img:hover{
-    scale: 0.9;
-    transition: ease-in-out 0.2s;
-    cursor: pointer;
-  }
-  
-  
-  .discount-percentage {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 14px;
-    color: #ffffff;
-    background-color: #0f3460;
-    padding: 5px 9px;
-    border-radius: 20px;
-    box-shadow: 0px 3px 5px rgba(0, 101, 253, 0.5);
-  }
-  
-  .product-name{
-    font-size: 25px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight:600;
-  
-  }
-  .product-price{
-    margin-top: 20px;
-    font-size: 30px;
-  }
-  .add-to-cart-icon{
-    margin-left: 10rem;
-  }
-  
-  .MuiSvgIcon-fontSizeInherit,.rating-text,#rating-box {
-    background-color: #ffffff !important;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /* From Uiverse.io by SouravBandyopadhyay */ 
-  
-  
-  .button {
-    --width: 100px;
-    --height: 35px;
-    --tooltip-height: 35px;
-    --tooltip-width: 90px;
-    --gap-between-tooltip-to-button: 18px;
-    --button-color: #ffffff;
-    --tooltip-color: #ffffff;
-    width: var(--width);
-    height: var(--height);
-    background: var(--button-color);
-    position: relative;
-    text-align: center;
-    border-radius: 0.5em;
-    font-family: "Arial";
-    transition: background 0.7s;
-    cursor: pointer;
-    position: absolute;
-    right: 30px;
-    bottom: 30px;
-  }
-  
-  .button::before {
-    position: absolute;
-    content: attr(data-tooltip);
-    width: var(--tooltip-width);
-    height: var(--tooltip-height);
-    background-color: #555;
-    font-size: 0.9rem;
-    color: #ffffff;
-    border-radius: 0.25em;
-    line-height: var(--tooltip-height);
-    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
-    left: calc(50% - var(--tooltip-width) / 2);
-  }
-  
-  .button::after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top-color: #555;
-    left: calc(50% - 10px);
-    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
-  }
-  
-  .button::after,
-  .button::before {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s;
-  }
-  
-  .text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-  }
-  
-  .button-wrapper,
-  .text,
-  .icon {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    color: #000000;
-    background-color: #ffffff;
-  }
-  
-  .text {
-    top: 0;
-  }
-  
-  .text,
-  .icon {
-    transition: top 0.5s;
-  }
-  
-  .icon {
-    color: #000000;
-    top: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .icon svg {
-    width: 34px;
-    height: 34px;
-    background-color: #ffffff ;
-    
-  
-  }
-  
-  .button:hover {
-    background: #fa0202;
-  }
-  
-  .button:hover .text {
-    top: -100%;
-  }
-  
-  .button:hover .icon {
-    top: 0;
-  }
-  
-  .button:hover:before,
-  .button:hover:after {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .button:hover:after {
-    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
-  }
-  
-  .button:hover:before {
-    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
-  }
-  
-  
-  
+.big-discount-container {
+  background-color: #f6f9fc;
+}
+.card-row {
+
+  position: relative;
+  top: 60rem;
+  left: 22rem;
+  width: 80rem;
+  margin-bottom: 7rem;
+}
+
+.dp-card {
+  background-color: #ffffff;
+  width: 26rem;
+  height: 24rem;
+  /* margin-left: 10rem; */
+  box-shadow: 0px 0px 30px 0px #adadad;
+}
+#dpcard {
+  border-radius: 28px;
+}
+#dpcard-img {
+  border-radius: 28px;
+}
+
+.product-col {
+  display: flex;
+  flex-wrap: wrap;
+}
+.big-discount-title {
+  position: relative;
+  top: 60rem;
+  left: 50rem;
+  font-size: 52px;
+  font-family: "Outfit", serif;
+  font-weight: 600;
+  width: 29rem;
+}
+.dpcard-item,
+.product-name,
+.product-price,
+.dpcard-body {
+  background-color: #ffffff;
+}
+.dpcard-item {
+  width: 20rem;
+  text-align: left;
+}
+.dpcard-body {
+  /* height: 10rem; */
+  width: 22rem;
+  margin: 5px;
+}
+#card-body {
+  margin: 0;
+  /* border-bottom-left-radius: 10px !important; */
+  /* background-color: #000000; */
+  margin-bottom: 8px;
+  margin-left: 3px;
+  font-family: "Montserrat", sans-serif !important;
+}
+.product-img {
+  width: 100%;
+  height: 16rem;
+  object-fit: contain;
+  background-color: #ffffff;
+  border-radius: 50px;
+}
+.product-img:hover {
+  scale: 0.9;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.discount-percentage {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #0f3460;
+  padding: 5px 9px;
+  border-radius: 20px;
+  box-shadow: 0px 3px 5px rgba(0, 101, 253, 0.5);
+}
+
+.product-name {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.product-price {
+  margin-top: 20px;
+  font-size: 30px;
+}
+.add-to-cart-icon {
+  margin-left: 10rem;
+}
+
+.MuiSvgIcon-fontSizeInherit,
+.rating-text,
+#rating-box {
+  background-color: #ffffff !important;
+}
+
+/* From Uiverse.io by SouravBandyopadhyay */
+
+.button {
+  --width: 100px;
+  --height: 35px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #ffffff;
+  --tooltip-color: #ffffff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.5em;
+  font-family: "Arial";
+  transition: background 0.7s;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: #555;
+  font-size: 0.9rem;
+  color: #ffffff;
+  border-radius: 0.25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #555;
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button::after,
+.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.button-wrapper,
+.text,
+.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.text {
+  top: 0;
+}
+
+.text,
+.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #000000;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 34px;
+  height: 34px;
+  background-color: #ffffff;
+}
+
+.button:hover {
+  background: #fa0202;
+}
+
+.button:hover .text {
+  top: -100%;
+}
+
+.button:hover .icon {
+  top: 0;
+}
+
+.button:hover:before,
+.button:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}

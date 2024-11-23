@@ -1,31 +1,22 @@
 .colorcard {
-  /* position: relative;
-    top: 55rem; */
-  /* background-color: rgb(226, 225, 225); */
   background-color: rgb(255, 255, 255);
 }
 .colorcard-container {
-  /* margin: ; */
   position: relative;
   top: 55rem;
   background-color: rgb(255, 255, 255);
 }
 .card-body {
   width: 300px;
-  /* height: 250px; */
-  /* margin: 200px; */
+
   margin: 3rem 0rem 3rem 2rem;
   border-radius: 10px;
 }
-/* .card-title{
-
-} */
 
 .card1,
 .card2,
 .card3,
 .card4 {
-  /* background-color: bisque; */
   width: 22rem;
   border-radius: 20px;
   font-size: 20px;

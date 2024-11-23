@@ -1,20 +1,8 @@
-.big-discount-container{
+.big-discount-container {
   background-color: #f6f9fc;
 }
-.card-row {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* position: relative;
-  top: 60rem;
-  left: 22rem;;
-  width: 80rem;
-  margin-bottom: 7rem; */
-  
-  
-}
 
-.navigate{
+.navigate {
   color: #000;
   text-decoration: none;
   background-color: #ffffff;
@@ -22,7 +10,6 @@
   border-radius: 20rem;
   color: #000;
   list-style: none;
-
 }
 
 .dp-card {
@@ -31,24 +18,19 @@
   height: 24rem;
   /* margin-left: 10rem; */
   box-shadow: 0px 0px 30px 0px #adadad;
-  
 }
-#dpcard{
+#dpcard {
   border-radius: 28px;
-
 }
-#dpcard-img{
+#dpcard-img {
   border-radius: 28px;
-
 }
 
-.product-col{
+.product-col {
   display: flex;
   flex-wrap: wrap;
-
-
 }
-.big-discount-title{
+.big-discount-title {
   position: relative;
   top: 60rem;
   left: 50rem;
@@ -56,32 +38,27 @@
   font-family: "Outfit", serif;
   font-weight: 600;
   width: 29rem;
-  
-  
 }
-.dpcard-item,.product-name,.product-price,.dpcard-body{
-  background-color:#ffffff;
+.dpcard-item,
+.product-name,
+.product-price,
+.dpcard-body {
+  background-color: #ffffff;
 }
-.dpcard-item{
+.dpcard-item {
   width: 20rem;
-  text-align:left;
+  text-align: left;
 }
-.dpcard-body{
+.dpcard-body {
   /* height: 10rem; */
   width: 22rem;
   margin: 5px;
-  
-
 }
 #card-body {
   margin: 0;
-  /* border-bottom-left-radius: 10px !important; */
-  /* background-color: #000000; */
   margin-bottom: 8px;
   margin-left: 3px;
   font-family: "Montserrat", sans-serif;
-  
-
 }
 .product-img {
   width: 100%;
@@ -90,12 +67,11 @@
   background-color: #ffffff;
   border-radius: 50px;
 }
-.product-img:hover{
+.product-img:hover {
   scale: 0.9;
   transition: ease-in-out 0.2s;
   cursor: pointer;
 }
-
 
 .discount-percentage {
   position: absolute;
@@ -109,36 +85,28 @@
   box-shadow: 0px 3px 5px rgba(0, 101, 253, 0.5);
 }
 
-.product-name{
+.product-name {
   width: 356px;
   font-size: 25px;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-weight:600;
-
+  font-weight: 600;
 }
-.product-price{
+.product-price {
   margin-top: 20px;
   font-size: 30px;
 }
-.add-to-cart-icon{
+.add-to-cart-icon {
   margin-left: 10rem;
 }
 
-.MuiSvgIcon-fontSizeInherit,.rating-text,#rating-box {
+.MuiSvgIcon-fontSizeInherit,
+.rating-text,
+#rating-box {
   background-color: #ffffff !important;
 }
 
-
-
-
-
-
-
-
-
-/* From Uiverse.io by SouravBandyopadhyay */ 
-
+/* From Uiverse.io by SouravBandyopadhyay */
 
 .button {
   --width: 100px;
@@ -233,9 +201,7 @@
 .icon svg {
   width: 34px;
   height: 34px;
-  background-color: #ffffff ;
-  
-
+  background-color: #ffffff;
 }
 
 .button:hover {
@@ -263,5 +229,3 @@
 .button:hover:before {
   bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
 }
-
-

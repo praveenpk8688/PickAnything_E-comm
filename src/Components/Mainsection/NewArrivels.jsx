@@ -1,7 +1,7 @@
-import React from 'react'
-// import { discountProducts } from "../AllData";
+import React from "react";
+
 import { randomproducts } from "../../AllData";
-// import "../Css/BigDiscounts.css";
+
 import "../Css/NewArrivels.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
@@ -10,8 +10,6 @@ import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import { Link } from "react-router-dom";
-
-
 
 const labels = {
   0.5: "Useless",
@@ -29,38 +27,25 @@ const labels = {
   5: "Excellent+",
 };
 
-// const productIds = products.map(product => product.id);
-// function RandomProduct(props) {
-//   const shuffledProducts = [...productIds].sort(() => 0.5 - Math.random());
-//   return shuffledProducts.slice(0, 8);
-// }
-
 function NewArrivels() {
-  // const selectedProductIds = RandomProduct(productIds);
-
   return (
-    <div className='new-arrivels'>
-      {/* {selectedProductIds.map(id => <p >{id}</p>)} */}
-
-        <h2 className="big-discount-title"> New Arrivals</h2>
+    <div className="new-arrivels">
+      <h2 className="big-discount-title"> New Arrivals</h2>
       <Row xs={1} md={3} className="card-row g-5  mt-5">
         {randomproducts.map((product, index) => (
           <Col key={index} className="product-col">
             <Card className="dp-card" id="dpcard">
               <Link className="navigate" to={`/product/${product.id}`}>
-              <Card.Img
-                variant="top"
-                src={product.imgUrl}
-                alt={product.name}
-                className="product-img"
-                id="dpcard-img"
-              />
+                <Card.Img
+                  variant="top"
+                  src={product.imgUrl}
+                  alt={product.name}
+                  className="product-img"
+                  id="dpcard-img"
+                />
               </Link>
-              <Card.Body className="dpcard-body" id='card-body'>
-                {/* <span className="discount-percentage">
-                  {product.discount}% off
-                </span> */}
-                <div className="dpcard-item" key={index} >
+              <Card.Body className="dpcard-body" id="card-body">
+                <div className="dpcard-item" key={index}>
                   <h3 className="product-name">{product.productName}</h3>
                   {/* /////////////////////////     STAR RATING     //////////////////// */}
                   <Box
@@ -119,7 +104,7 @@ function NewArrivels() {
         ))}
       </Row>
     </div>
-  )
+  );
 }
 
-export default NewArrivels
+export default NewArrivels;

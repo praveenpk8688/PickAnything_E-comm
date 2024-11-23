@@ -1,218 +1,203 @@
-.cart-img{
-    /* display: none; */
-    position: relative;
-    left: 10px;
-    
+.cart-img {
+  /* display: none; */
+  position: relative;
+  left: 10px;
 }
-.atc_container{
-    display: inline-block;
-    position: relative;
-    left: 10rem;
-    top: 11rem;
-    border: none;
-    
-    
+.atc_container {
+  display: inline-block;
+  position: relative;
+  left: 10rem;
+  top: 11rem;
+  border: none;
 }
- .cart-title {
-    font-size: 1.6rem !important;
-    font-family: "Outfit", serif;
-    font-weight: 600;
-    position: absolute;
-    top: 2rem;
-    left: 17rem;
-    
-  
-  
- }
- .cart-card{
-    border: none !important;
-    box-shadow: 0px 0px 49px 0px rgba(0, 0, 0, 0.137);
-    border-radius: 14px !important;
-    margin-bottom: 25px;
- }
+.cart-title {
+  font-size: 1.6rem !important;
+  font-family: "Outfit", serif;
+  font-weight: 600;
+  position: absolute;
+  top: 2rem;
+  left: 17rem;
+}
+.cart-card {
+  border: none !important;
+  box-shadow: 0px 0px 49px 0px rgba(0, 0, 0, 0.137);
+  border-radius: 14px !important;
+  margin-bottom: 25px;
+}
 
-
-
-/* Remove cross icon */
-/* From Uiverse.io by javierBarroso */ 
 .cross-btn {
-    position: relative;
-    top: 14px;
-    left: 40.6rem;
-    width: 2em !important;
-    height: 2em !important;
-    border: none;
-    background: rgb(255, 255, 255);
-    /* border-radius: 50px; */
-    transition: background 0.5s;
+  position: relative;
+  top: 14px;
+  left: 40.6rem;
+  width: 2em !important;
+  height: 2em !important;
+  border: none;
+  background: rgb(255, 255, 255);
+
+  transition: background 0.5s;
+}
+
+.X {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2em;
+  height: 1.5px;
+  background-color: rgb(0, 0, 0);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.Y {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2em;
+  height: 1.5px;
+  background-color: #000000;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.close {
+  position: absolute;
+  display: flex;
+  padding: 0.8rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  top: -144%;
+  left: 50%;
+  width: 3em;
+  height: 1.7em;
+  font-size: 17px;
+  font-weight: 600;
+  background-color: #494a4b;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.button:hover {
+  background-color: rgb(184, 26, 26);
+  border-radius: 50px;
+}
+
+.button:active {
+  background-color: rgb(0, 0, 0);
+}
+
+.button:hover > .close {
+  animation: close 0.2s forwards 0.25s;
+}
+
+@keyframes close {
+  100% {
+    opacity: 1;
   }
-  
-  .X {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 2em;
-    height: 1.5px;
-    background-color: rgb(0, 0, 0);
-    transform: translateX(-50%) rotate(45deg);
-  }
-  
-  .Y {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 2em;
-    height: 1.5px;
-    background-color: #000000;
-    transform: translateX(-50%) rotate(-45deg);
-  }
-  
-  .close {
-    position: absolute;
-    display: flex;
-    padding: 0.8rem 1.5rem;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(-50%);
-    top: -144%;
-    left: 50%;
-    width: 3em;
-    height: 1.7em;
-    font-size: 17px;
-    font-weight: 600;
-    background-color:#494a4b;
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 3px;
-    pointer-events: none;
-    opacity: 0;
-  }
-  
-  .button:hover {
-    background-color: rgb(184, 26, 26);
-    border-radius: 50px;
-  }
-  
-  .button:active {
-    background-color: rgb(0, 0, 0);
-  }
-  
-  .button:hover > .close {
-    animation: close 0.2s forwards 0.25s;
-  }
-  
-  @keyframes close {
-    100% {
-      opacity: 1;
-    }
-  }
-
-
-.plus-icon{
-    position: absolute;
-    top: 150px;
-    left: 35rem;
-    width: 2em!important;
-    height: 2em!important;
-    border: 1px solid rgba(0, 0, 0, 0.11);
-    border-radius: 5px;
-    background: rgb(255, 255, 255);
-    /* border-radius: 50px; */
-    transition: background 0.5s;
-  
 }
 
-.minus-icon{
-    position: absolute;
-    top: 150px;
-    left: 39.3rem;
-    width: 2em!important;
-    height: 2em!important;
-    border-radius: 5px;
-    border:none;
-    background: #f4f8fb;
-    /* border-radius: 50px; */
-    transition: background 0.5s;
-}
-.cart-Price{
-
-    position: absolute;
-    top:30px;
-    left: 17.1rem;
-    font-size: 1.2rem!important;
-    font-family: "Outfit", serif;
-    font-weight: 600;
-    color: #000000;
-}
-.cart-quantity{
-    position: absolute;
-    top:30px;
-    left: 25.8rem;
-    font-size: 1.2rem!important;
-    font-family: "Outfit", serif;
-    font-weight: 600;
-    color: #000000;
-}
-.cart-subtotal{
-    position: absolute;
-    top: 70px;
-    left: 17.1rem;
-    font-size: 1.1rem!important;
-    font-family: "Outfit", serif;
-    font-weight: 450;
-    color: #000000;
-}
-.total-price{
-    position: absolute;
-    top: 186px;
-    left: 77.8rem;
-    width: 27rem !important;
-    height: 11.9rem;
-    font-size: 1.2rem!important;
-    font-family: "Outfit", serif;
-    font-weight: 600;
-    color: #000000;
-    box-shadow: 0px 0px 49px 0px rgba(0, 0, 0, 0.137);
-
-    /* border: 2px solid #00000025; */
-    /* margin: 20px !important; */
-    border-radius: 10px;
-
-}
-.cart-summary{
-    margin-bottom: 30px;
-    padding-bottom: 9px;
-    margin: 20px;
-    border-bottom: 2px solid #00000011;
-    color: #0f3460;
-    font-weight: 600;
-    
-
-}
-.total-price1{
-    margin: 20px;
-
-}
-.total-price2{
-    margin: 20px;
-    color: #0f3460;
-    font-weight: 600;
-
+.plus-icon {
+  position: absolute;
+  top: 150px;
+  left: 35rem;
+  width: 2em !important;
+  height: 2em !important;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+  /* border-radius: 50px; */
+  transition: background 0.5s;
 }
 
-.empty-cart{
-    position: absolute;
-    top: 390px;
-    left: 43.5rem;
-    font-size: 5.5rem!important;
-    font-family: "Outfit", serif;
-    font-weight: 600;
-    
-    /* color: #000000; */
-    background-image: linear-gradient(45deg, #000000 31%, #0073ff 49%, #6ed817 77%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.minus-icon {
+  position: absolute;
+  top: 150px;
+  left: 39.3rem;
+  width: 2em !important;
+  height: 2em !important;
+  border-radius: 5px;
+  border: none;
+  background: #f4f8fb;
+  /* border-radius: 50px; */
+  transition: background 0.5s;
+}
+.cart-Price {
+  position: absolute;
+  top: 30px;
+  left: 17.1rem;
+  font-size: 1.2rem !important;
+  font-family: "Outfit", serif;
+  font-weight: 600;
+  color: #000000;
+}
+.cart-quantity {
+  position: absolute;
+  top: 30px;
+  left: 25.8rem;
+  font-size: 1.2rem !important;
+  font-family: "Outfit", serif;
+  font-weight: 600;
+  color: #000000;
+}
+.cart-subtotal {
+  position: absolute;
+  top: 70px;
+  left: 17.1rem;
+  font-size: 1.1rem !important;
+  font-family: "Outfit", serif;
+  font-weight: 450;
+  color: #000000;
+}
+.total-price {
+  position: absolute;
+  top: 186px;
+  left: 77.8rem;
+  width: 27rem !important;
+  height: 11.9rem;
+  font-size: 1.2rem !important;
+  font-family: "Outfit", serif;
+  font-weight: 600;
+  color: #000000;
+  box-shadow: 0px 0px 49px 0px rgba(0, 0, 0, 0.137);
+
+  /* border: 2px solid #00000025; */
+  /* margin: 20px !important; */
+  border-radius: 10px;
+}
+.cart-summary {
+  margin-bottom: 30px;
+  padding-bottom: 9px;
+  margin: 20px;
+  border-bottom: 2px solid #00000011;
+  color: #0f3460;
+  font-weight: 600;
+}
+.total-price1 {
+  margin: 20px;
+}
+.total-price2 {
+  margin: 20px;
+  color: #0f3460;
+  font-weight: 600;
+}
+
+.empty-cart {
+  position: absolute;
+  top: 390px;
+  left: 43.5rem;
+  font-size: 5.5rem !important;
+  font-family: "Outfit", serif;
+  font-weight: 600;
+  background-image: linear-gradient(
+    45deg,
+    #000000 31%,
+    #0073ff 49%,
+    #6ed817 77%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

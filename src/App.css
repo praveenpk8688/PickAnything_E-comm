@@ -1,24 +1,10 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #f6f9fc;
 }
-Link{
+Link {
   text-decoration: none;
   color: black;
 }
-
-/* #App{
-  background-color: rgb(240, 240, 240);
-  
-} */
-/* .navbar{
-  display: flex;
-  gap: 30rem;
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-  
-} */
-
